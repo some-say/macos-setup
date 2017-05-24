@@ -2,9 +2,8 @@
 
 set -euo pipefail
 
-CODE_DIR=~/Code
-REPO='https://github.com/fuadsaud/houdini'
-PROJECTS_DIR="$CODE_DIR/fuadsaud/"
+CODE_DIR=~/Projects
+REPO='https://github.com/romuloalves/houdini'
 HOUDINI_DIR=~/.houdini
 VIM_DIR=~/.vim
 GIT_DIR=~/.git
@@ -16,92 +15,37 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew update
 
 brew install zsh \
-  reattach-to-user-namespace \
-  ag \
   git \
-  hub \
-  curl \
-  python \
-  youtube-dl \
-  chruby \
-  fasd \
-  fzf \
-  tree \
-  trash \
-  ctags \
-  unrar \
-  p7zip \
-  jq \
-  asciinema \
-  cowsay \
-  leiningen \
-  htop \
-  mas \
-  tmate \
-  tmux
-
-brew tap neovim/neovim
+  curl
 
 brew install --HEAD \
   vim \
-  neovim \
   ruby-install
 
 brew cask install \
   java \
   spotify \
-  virtualbox \
   google-chrome \
-  google-drive \
-  vlc \
-  atom \
-  dropbox \
-  vagrant \
   go \
   heroku-toolbelt \
   docker \
   whatsapp \
-  transmission \
-  1password \
   spectacle \
-  flux \
-  iterm2-beta
+  flux
 
 local mac_store_apps=(
-'Telegram Desktop'
 'Slack'
-'Twitter'
-'Amphetamine' 
-'Daisy Disk'
-'Reeder 3'
-'Pixelmator'
-'Irvue'
-'Chegou'
-'CloudApp'
-'Shazam'
 )
 
 for appname in mac_store_apps; do
   mas search $appname | head -n 1 | cut -f 1 -d ' ' | xargs mas install
 done
 
-# fonts
+mkdir -p $CODE_DIR
 
-brew tap caskroom/fonts
+git clone --recursive $REPO "$CODE_DIR"
 
-brew cask install \
-  font-fira-sans \
-  font-fira-code \
-  font-comic-neue
-
-brew tap brona/iproute2mac
-brew install iproute2mac
-
-mkdir -p $PROJECTS_DIR
-
-git clone --recursive $REPO "$PROJECTS_DIR"
-
-ln -s $PROJECTS_DIR/houdini $HOUDINI_DIR
+ln -s $CODE_DIR/houdini $HOUDINI_DIR
 
 # vim
 
@@ -144,62 +88,12 @@ sudo echo $HOMEBREW_ZSH_BIN >> /etc/shells
 
 chsh -s $HOMEBREW_ZSH_BIN
 
-# tmux
-
-ln -s $HOUDINI_DIR/tmux.conf ~/.tmux.conf
-
-# rubocop
-
-ln -s $HOUDINI_DIR/rubocop.yml ~/.rubocop.yml
-
 # gem
 
 ln -s $HOUDINI_DIR/gemrc ~/.gemrc
-
-# git
-
-ln -s $HOUDINI_DIR/git/ignore ~/.gitignore
-ln -s $HOUDINI_DIR/git/config ~/.gitconfig
-
-# ctags
-
-ln -s $HOUDINI_DIR/ctags ~/.ctags
-
-# leiningen
-
-ln -s $HOUDINI_DIR/lein ~/.lein
-
-# karabiner
-
-ln -s $HOUDINI_DIR/karabiner ~/.config
-
-# python
-
-pip install --upgrade pip setuptools
-pip install \
-  virtualenv \
-  virtualenvwrapper \
-  powerline-status \
-  psutil \
-  speedtest-cli \
-  doge \
-  neovim
 
 # ruby
 
 ruby-install -s /tmp/ruby-src ruby
 
-gem install \
-  boom \
-  pry \
-  rubocop \
-  m \
-  bundler \
-  teamocil \
-  neovim
-
-$HOUDINI_DIR/osx
-
-# heroku
-
-heroku plugins:install heroku-repo
+$HOUDINI_DIR/macos
