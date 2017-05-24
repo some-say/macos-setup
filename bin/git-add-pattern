@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-git ls-files -cdmo --exclude-standard | grep "$1" | xargs git add

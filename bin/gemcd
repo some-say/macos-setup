@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# cd to given rubygem directory.
-
-if [ -n "$(gem which $1)" ]; then
-  cd $(dirname $(dirname "$(gem which $1)"))
-fi

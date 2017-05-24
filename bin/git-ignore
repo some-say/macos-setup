@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-curl -L -s "https://gitignore.io/api/$@"
