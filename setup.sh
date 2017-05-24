@@ -31,10 +31,31 @@ brew cask install \
   docker \
   whatsapp \
   spectacle \
-  flux
+  flux \
+  alfred \
+  now \
+  hyper \
+  postman \
+  caprine \
+  skype \
+  filezilla \
+  kap \
+  webtorrent \
+  cloudup \
+  moeditor \
+  virtualbox
 
 local mac_store_apps=(
-'Slack'
+'Slack',
+'Sketch',
+'Bear',
+'Newton',
+'Keynote',
+'Affinity Designer',
+'Microsoft Word',
+'Microsoft PowerPoint',
+'Microsoft Excel',
+'Battery Indicator'
 )
 
 for appname in mac_store_apps; do
