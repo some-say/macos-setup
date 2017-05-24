@@ -79,15 +79,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 vim +PlugInstall +qall
 
-# neovim
-
-ln -s $HOUDINI_DIR/nvim ~/.config/
-
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-nvim +PlugInstall +qall
-
 # zsh
 
 ln -s $HOUDINI_DIR/zsh ~/.zsh
