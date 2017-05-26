@@ -7,7 +7,6 @@ REPO='https://github.com/romuloalves/macos-setup.git'
 VIM_THEME_REPO='https://github.com/zaki/zazen.git'
 SETUP_DIR=~/.macos-setup
 VIM_DIR=~/.vim
-GIT_DIR=~/.git
 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 

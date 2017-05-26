@@ -72,4 +72,4 @@ vmap <C-k> <Plug>MoveBlockUp
 nmap <A-j> <Plug>MoveLineDown
 nmap <A-k> <Plug>MoveLineUp
 
- let g:airline_theme='raven'
+let g:airline_theme='raven'
