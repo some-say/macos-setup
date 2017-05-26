@@ -8,8 +8,6 @@ SETUP_DIR=~/.macos-setup
 VIM_DIR=~/.vim
 GIT_DIR=~/.git
 
-HOMEBREW_ZSH_BIN=/usr/local/bin/zsh
-
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew update
@@ -100,9 +98,8 @@ ln -s $SETUP_DIR/bash ~/.bash
 ln -s ~/.bash/profile.bash ~/.bash_profile
 ln -s ~/.bash/rc.bash ~/.bashrc
 
-sudo echo $HOMEBREW_ZSH_BIN >> /etc/shells
-
-chsh -s $HOMEBREW_ZSH_BIN
+# hyper
+ln -s $SETUP_DIR/hyper/config.hyper.js ~/.hyper.js
 
 # gem
 
