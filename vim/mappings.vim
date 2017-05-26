@@ -1,1 +1,0 @@
-../nvim/mappings.vim
