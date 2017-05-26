@@ -4,6 +4,7 @@ set -euo pipefail
 
 CODE_DIR=~/Projects
 REPO='https://github.com/romuloalves/macos-setup.git'
+VIM_THEME_REPO='https://github.com/zaki/zazen.git'
 SETUP_DIR=~/.macos-setup
 VIM_DIR=~/.vim
 GIT_DIR=~/.git
@@ -74,12 +75,17 @@ ln -s $CODE_DIR/macos-setup $SETUP_DIR
 
 ln -s $SETUP_DIR/vim $VIM_DIR
 ln -s $VIM_DIR/rc.vim ~/.vimrc
-ln -s $VIM_DIR/grc.vim ~/.gvimrc
+ln -s $VIM_DIR/plug.vim ~/.vim/plug.vim
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 vim +PlugInstall +qall
+
+# vim theme
+git clone --recursive $VIM_THEME_REPO "$CODE_DIR"
+
+ls -s $CODE_DIR/zazen/colors/zazen.vim ~/.vim/colors/zazen.vim
 
 # zsh
 
