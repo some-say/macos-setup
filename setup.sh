@@ -46,7 +46,9 @@ brew cask install \
   moeditor \
   virtualbox \
   macvim \
-  eclipse-java
+  eclipse-java \
+  android-studio \
+  android-sdk
 
 local mac_store_apps=(
 'Slack',
