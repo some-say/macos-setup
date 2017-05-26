@@ -20,7 +20,9 @@ brew install zsh \
 
 brew install --HEAD \
   vim \
-  ruby-install
+  ruby-install \
+  nvm \
+  go
 
 brew cask install \
   java \
@@ -107,5 +109,25 @@ ln -s $HOUDINI_DIR/gemrc ~/.gemrc
 # ruby
 
 ruby-install -s /tmp/ruby-src ruby
+
+# node
+
+nvm install v7.6.0
+
+npm install --global \
+  bower \
+  browser-sync \
+  create-micro \
+  create-next-app \
+  fkill-cli \
+  grunt \
+  gulp \
+  is-online-cli \
+  login-feevale-cli \
+  cwi-registrar-ponto \
+  react-native-cli \
+  serve \
+  trash-cli
+
 
 $HOUDINI_DIR/macos
