@@ -89,14 +89,9 @@ ls -s $CODE_DIR/zazen/colors/zazen.vim ~/.vim/colors/zazen.vim
 
 # zsh
 
-ln -s $SETUP_DIR/zsh ~/.zsh
-ln -s ~/.zsh/prezto ~/.zprezto
-ln -s ~/.zsh/rc.zsh ~/.zshrc
-ln -s ~/.zsh/env.zsh ~/.zshenv
-ln -s ~/.zsh/profile.zsh ~/.zprofile
-ln -s ~/.zsh/login.zsh ~/.zlogin
-ln -s ~/.zsh/logout.zsh ~/.zlogout
-ln -s ~/.zsh/preztorc.zsh ~/.zpreztorc
+curl https://raw.githubusercontent.com/zeit/zeit.zsh-theme/master/zeit.zsh-theme -Lo ~/.oh-my-zsh/themes/zeit.zsh-theme
+
+ln -s $SETUP_DIR/zsh/rc.zshrc ~/.zshrc
 
 # bash
 
