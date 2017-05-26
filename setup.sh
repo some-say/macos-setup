@@ -47,7 +47,6 @@ brew cask install \
   virtualbox \
   macvim \
   eclipse-java \
-  android-studio \
   android-sdk
 
 local mac_store_apps=(
