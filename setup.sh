@@ -22,14 +22,12 @@ brew install --HEAD \
   vim \
   ruby-install \
   nvm \
-  go \
   yarn
 
 brew cask install \
   java \
   spotify \
   google-chrome \
-  go \
   heroku-toolbelt \
   docker \
   whatsapp \
@@ -111,6 +109,10 @@ ln -s $HOUDINI_DIR/gemrc ~/.gemrc
 # ruby
 
 ruby-install -s /tmp/ruby-src ruby
+
+# gems
+gem install rails \
+  compass
 
 # node
 
