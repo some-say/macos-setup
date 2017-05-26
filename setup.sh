@@ -3,8 +3,8 @@
 set -euo pipefail
 
 CODE_DIR=~/Projects
-REPO='https://github.com/romuloalves/houdini'
-HOUDINI_DIR=~/.houdini
+REPO='https://github.com/romuloalves/macos-setup.git'
+SETUP_DIR=~/.macos-setup
 VIM_DIR=~/.vim
 GIT_DIR=~/.git
 
@@ -70,11 +70,11 @@ mkdir -p $CODE_DIR
 
 git clone --recursive $REPO "$CODE_DIR"
 
-ln -s $CODE_DIR/houdini $HOUDINI_DIR
+ln -s $CODE_DIR/macos-setup $SETUP_DIR
 
 # vim
 
-ln -s $HOUDINI_DIR/vim $VIM_DIR
+ln -s $SETUP_DIR/vim $VIM_DIR
 ln -s $VIM_DIR/rc.vim ~/.vimrc
 ln -s $VIM_DIR/grc.vim ~/.gvimrc
 
@@ -85,7 +85,7 @@ vim +PlugInstall +qall
 
 # zsh
 
-ln -s $HOUDINI_DIR/zsh ~/.zsh
+ln -s $SETUP_DIR/zsh ~/.zsh
 ln -s ~/.zsh/prezto ~/.zprezto
 ln -s ~/.zsh/rc.zsh ~/.zshrc
 ln -s ~/.zsh/env.zsh ~/.zshenv
@@ -96,7 +96,7 @@ ln -s ~/.zsh/preztorc.zsh ~/.zpreztorc
 
 # bash
 
-ln -s $HOUDINI_DIR/bash ~/.bash
+ln -s $SETUP_DIR/bash ~/.bash
 ln -s ~/.bash/profile.bash ~/.bash_profile
 ln -s ~/.bash/rc.bash ~/.bashrc
 
@@ -106,7 +106,7 @@ chsh -s $HOMEBREW_ZSH_BIN
 
 # gem
 
-ln -s $HOUDINI_DIR/gemrc ~/.gemrc
+ln -s $SETUP_DIR/gemrc ~/.gemrc
 
 # ruby
 
@@ -138,4 +138,4 @@ npm install --global \
   trash-cli
 
 
-$HOUDINI_DIR/macos
+$SETUP_DIR/macos
