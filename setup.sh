@@ -45,7 +45,8 @@ brew cask install \
   cloudup \
   moeditor \
   virtualbox \
-  macvim
+  macvim \
+  eclipse-ide
 
 local mac_store_apps=(
 'Slack',
