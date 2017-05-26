@@ -22,7 +22,8 @@ brew install --HEAD \
   vim \
   ruby-install \
   nvm \
-  go
+  go \
+  yarn
 
 brew cask install \
   java \
