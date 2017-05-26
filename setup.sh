@@ -46,7 +46,8 @@ brew cask install \
   webtorrent \
   cloudup \
   moeditor \
-  virtualbox
+  virtualbox \
+  macvim
 
 local mac_store_apps=(
 'Slack',
@@ -114,6 +115,8 @@ ruby-install -s /tmp/ruby-src ruby
 # node
 
 nvm install v7.6.0
+
+npm install --global npm@5
 
 npm install --global \
   bower \
